@@ -4,6 +4,7 @@ public class moto {
     boolean ligada;
     double velocidadeMaxima = 30;
     double velocidadeAtual;
+    
 
     void ligar() {
         ligada = true;
