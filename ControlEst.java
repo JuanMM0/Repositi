@@ -3,8 +3,8 @@ public class ControlEst {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Estoque estoque = new Estoque();
-        int opcao;
+        Estoque estoque = new Estoque(); // Cria um objeto Estoque para armazenar itens.
+        int opcao; // Declara uma variável para armazenar a escolha do usuário.
 
         do {
 
@@ -45,7 +45,8 @@ public class ControlEst {
                     String nomeAtualizar = sc.nextLine();
                     ItemEstoque itemAtualizar = estoque.consultarItem(nomeAtualizar);
 
-                    if (itemAtualizar != null) {
+                    if (itemAtualizar != null) // Se o item for encontrado
+                    {
 
                         System.out.print("Novo Preço por Unidade: ");
                         double novoPreco = sc.nextDouble();
@@ -106,29 +107,32 @@ class ItemEstoque {
     private String nome;
     private double precoPorUnidade;
     private int quantidadeDisponivel;
+    // Construtor da classe ItemEstoque
     public ItemEstoque(String nome, double precoPorUnidade, int quantidadeDisponivel) {
 
         this.nome = nome;
         this.precoPorUnidade = precoPorUnidade;
         this.quantidadeDisponivel = quantidadeDisponivel;
     }
+    //  Este é um método público que retorna o nome do item. É usado para acessar o valor do atributo `nome` de fora da classe.
     public String getNome() {
         return nome;
     }
+     // método público retorna o preço por unidade do item. Semelhante ao método anterior, permite acessar o valor do atributo `precoPorUnidade`.
     public double getPrecoPorUnidade() {
         return precoPorUnidade;
 
     }
+// método público que permite definir (atualizar) o preço por unidade do item. Ele recebe um novo valor como argumento e atualiza o atributo `precoPorUnidade`.
     public void setPrecoPorUnidade(double precoPorUnidade) {
-
         this.precoPorUnidade = precoPorUnidade;
     }
+    //Este método público retorna a quantidade disponível do item. Permite acessar o valor do atributo `quantidadeDisponivel`.
     public int getQuantidadeDisponivel() {
-
-        return quantidadeDisponivel;
+ return quantidadeDisponivel;
     }
+     //Este método público permite definir (atualizar) a quantidade disponível do item. Recebe um novo valor como argumento e atualiza o atributo `quantidadeDisponivel`.
     public void setQuantidadeDisponivel(int quantidadeDisponivel) {
-
         this.quantidadeDisponivel = quantidadeDisponivel;
     }
 }
