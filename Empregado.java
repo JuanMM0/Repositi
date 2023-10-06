@@ -1,59 +1,28 @@
+
+
 public class Empregado {
-
-    private String nome;
-
-    private double salario;
-
+    private static String nome = "Zé Ruela";
     private String cargo;
-
-    private int idade;
-
     private int tempoDeCasa;
+    //private static String empresa = "SENAI";
 
-    public Empregado(String nome, double salario, String cargo, int idade,
-
-            int tempoDeCasa) {
-
+    public Empregado(String nome, String cargo,int tempoDeCasa) {
         this.nome = nome;
-
-        this.salario = salario;
-
-        this.cargo = cargo;
-
-        this.idade = idade;
-
+        this.cargo= cargo;
         this.tempoDeCasa = tempoDeCasa;
-
     }
 
     public String getNome() {
-
         return nome;
-
     }
-
-    public double getSalario() {
-
-        return salario;
-
-    }
+   
 
     public String getCargo() {
-
         return cargo;
-
     }
 
-    public int getIdade() {
-
-        return idade;
-
-    }
 
     public int getTempoDeCasa() {
-
         return tempoDeCasa;
-
     }
-
 }

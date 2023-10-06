@@ -1,9 +1,13 @@
+
 public class Promocao {
-    boolean qualificacao = false;
-    public boolean promocao(Empregado e){
-        if(e.getTempoDeCasa() >5){
-            qualificacao = true;
+    public Empregado promocao(Empregado... e){
+       Empregado promovido = e[0];
+
+       for( int i = 1; i < e.length; i++){
+        if(e[i].getTempoDeCasa() > promovido.getTempoDeCasa()){
+            promovido = e[i];
         }
-    return qualificacao;
+       }
+       return promovido;
     }
 }
