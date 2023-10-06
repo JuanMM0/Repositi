@@ -1,38 +1,35 @@
 public class Produto {
-    /* Atributos privados que armazenam o nome do produto, seu preço e a quantidade em estoque,
-     respectivamente. */
     private String nome;
     private double preco;
-    private int quantiEstoque;
+    /*Duas váriaveís que fazem com que o código funcione*/
 
-    /*  O construtor Produto é usado para criar um objeto Produto com valores iniciais
-     para esses atributos. */
-    public Produto(String nome, double preco, int quantiEstoque) {
+    public Produto(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
-        this.quantiEstoque = quantiEstoque;
-    }
+        /*Este é o construtor da classe Produto. Ele permite criar um objeto Produto e inicializa os 
+        campos nome e preco com os valores fornecidos como argumentos ao criar um novo objeto.*/
 
-    /* Métodos GET para acessar os valores dos meus atributos, usando do return para devolver esses mesmos
-     valores */
+    }
     public String getNome() {
         return nome;
+        /*Retorna o nome do produto. */
     }
-
     public double getPreco() {
         return preco;
+        /* Retorna o preço do produto. */
     }
-
-    public int getQuantiaEstoque() {
-        return quantiEstoque;
+    public void setNome(String nome) {
+        this.nome = nome;
+        /* Define o nome do produto. */
     }
-
-    /*  Método para calcular o valor total em estoque, calcula o valor total em estoque multiplicando 
-    o preço pelo número em estoque.
-    */
-    public double calcularValor() {
-        return preco * quantiEstoque;
+    public void setPreco(double preco) {
+        this.preco = preco;
+        /*Define o preço do produto. */
+    }
+    public String toString() {
+        return "Nome: " + nome + "\nPreço: R$" + String.format("%.2f", preco);
+        /*Este método substitui o método toString da classe Object e retorna uma representação 
+        formatada em string do objeto Produto. Ele retorna uma string que inclui o nome e o preço 
+        do produto formatado com duas casas decimais */
     }
 }
-
-  
