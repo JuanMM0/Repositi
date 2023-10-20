@@ -1,18 +1,43 @@
-public class Veiculo {
+abstract class Veiculo {
+    protected String marca;
 
-    public static String marca = "Mercúrio";
-    public static String modelo = "Pegaso";
-    private String numChassis;
-    private String combustivel;
+    public Veiculo(String marca) {
+        this.marca = marca;
+    }
+    public abstract double calVLMax();
+    public abstract void imprimirDescricao();
+}
+class Carro extends Veiculo {
+    private double potencia;
 
-    public Veiculo(String numChassis, String combustivel) {
-        this.numChassis = numChassis;
-        this.combustivel = combustivel;
+    public Carro(String marca, double potencia) {
+        super(marca);
+        this.potencia = potencia;
     }
-    public String getNumChassis() {
-        return numChassis;
+    @Override
+    public double calVLMax() {
+        // Exemplo de cálculo de velocidade máxima para um carro
+        return potencia * 2.0;
     }
-    public String getCombustivel() {
-        return combustivel;
+    @Override
+    public void imprimirDescricao() {
+        System.out.println("Carro da marca " + marca);
+    }
+}
+class Bicicleta extends Veiculo {
+    private int forcaCiclista;
+
+    public Bicicleta(String marca, int forcaCiclista) {
+        super(marca);
+        this.forcaCiclista = forcaCiclista;
+    }
+    @Override
+    public double calVLMax() {
+        // Exemplo de cálculo de velocidade máxima para uma bicicleta
+        return forcaCiclista * 0.2;
+    }
+    @Override
+    public void imprimirDescricao() {
+        System.out.println("Bicicleta da marca " + marca);
     }
 }
